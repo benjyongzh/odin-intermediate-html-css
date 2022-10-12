@@ -1,9 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;700&display=swap');
 
 * {
-    border: 1px solid black;
+    /* border: 1px solid black; */
     font-family: 'Manrope', sans-serif;
     font-weight: normal;
+    box-sizing: border-box;
 }
 
 :root {
@@ -12,11 +13,14 @@
     --font-large: 18px;
     --font-medium: 14px;
     --font-title: 60px;
-    --color-accent: rgb(107,133,160);
-    --color-detail: rgb(209, 195, 206);
+    --color-accent: rgb(87, 108, 131);
+    --color-detail: rgb(228, 212, 224);
     --color-error: rgb(216, 96, 112);
     --color-light: rgb(201, 207, 212);
     --color-dark: rgb(37, 46, 54);
+    --color-unfocus: rgb(169, 184, 194);
+    --color-shadow: rgba(37, 46, 54, 0.1);
+    --color-valid: rgb(209, 238, 224);
 
 }
 
@@ -48,6 +52,7 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    z-index: 1;
 }
 
 
@@ -57,6 +62,7 @@ body {
     color: var(--color-dark);
     text-align: center;
     font-weight: bold;
+    background-color: var(--color-shadow);
 }
 
 .sidebar>.photo-credit {
@@ -100,11 +106,15 @@ body {
 .form-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: flex-start;
-    gap: 20px;
-    box-shadow: 0 1px 2px 1px rgba(37, 46, 54, 0.6),
-    0 4px 4px 1px rgba(37, 46, 54, 0.3);
+    row-gap: 15px;
+    box-shadow: 0 1px 2px 1px var(--color-shadow),
+    0 4px 6px 1px var(--color-shadow);
+    padding-top: 25px;
+    padding-bottom: 25px;
+    /* background-color: rgb(201, 207, 212); */
+    background-color: rgb(209, 215, 219);
 }
 
 .form-title {
@@ -112,5 +122,63 @@ body {
 }
 
 .form-row {
-    width: 50%;
+    width: 47%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 1px;
+    padding: 5px 0;
+    margin-right: 15px;
 }
+
+.form-row label {
+    font-size: var(--font-small);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold;
+    color: var(--color-dark);
+}
+
+.form-row input {
+    font-size: var(--font-medium);
+    color: var(--color-dark);
+    border-radius: 4px;
+    border: 2px solid var(--color-unfocus);
+    width: 95%;
+    height: 30px;
+    padding: 8px;
+}
+
+.form-row input[type=number]::-webkit-inner-spin-button,
+.form-row input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+}
+
+
+.form-row input:focus {
+    border: 2px solid var(--color-dark);
+    outline: none;
+    box-shadow: 2px 2px 3px 1px var(--color-shadow);
+}
+
+/* .form-row input:required:valid {
+    border: 2px solid var(--color-accent);
+    outline: none;
+    background-color: var(--color-valid);
+}
+
+.form-row input:invalid {
+    border: 2px solid var(--color-error);
+    outline: none;
+} */
+
+.form-row input.error {
+    border: 2px solid var(--color-error);
+    outline: none;
+    background-color: var(--color-detail);
+}
+
+/* .form-row input::after {
+    content: "u sucks"
+} */
