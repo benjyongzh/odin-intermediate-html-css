@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;700&display=swap');
+
+* {
+    border: 1px solid black;
+    font-family: 'Manrope', sans-serif;
+    font-weight: normal;
+}
+
+:root {
+    --font-error: 9px;
+    --font-small: 12px;
+    --font-large: 18px;
+    --font-medium: 14px;
+    --font-title: 60px;
+    --color-accent: rgb(107,133,160);
+    --color-detail: rgb(209, 195, 206);
+    --color-error: rgb(216, 96, 112);
+    --color-light: rgb(201, 207, 212);
+    --color-dark: rgb(37, 46, 54);
+
+}
+
+body {
+    margin: 0;
+    background-color: rgb(41, 44, 48);
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 1200px;
+    height: 100vh;
+    position: fixed;
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: stretch;
+    flex: 4;
+    height: 100%;
+    gap: 650px;
+    background-image: url("./img/patrick-hendry-o5LAZVa28j0-unsplash.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+.sidebar>.main-title-box {
+    padding: 10px;
+    font-size: var(--font-title);
+    color: var(--color-dark);
+    text-align: center;
+    font-weight: bold;
+}
+
+.sidebar>.photo-credit {
+    margin-bottom: 10px;
+    padding: 10px;
+    font-size: var(--font-small);
+    color: var(--color-detail);
+    text-align: center;
+    font-weight: bold;
+}
+
+.content-area {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    flex: 6;
+    height: 100%;
+    gap: 35px;
+    background-color: var(--color-light);
+}
+
+.content-area>header,
+.form-title {
+    font-size: var(--font-large);
+    color: var(--color-dark);
+    font-weight: bold;
+}
+
+.content-area>header,
+.content-area>form {
+    padding-left: 50px;
+    padding-right: 150px;
+}
+
+.content-area>button,
+.content-area>.checker {
+    margin-left: 50px;
+}
+
+.form-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+    box-shadow: 0 1px 2px 1px rgba(37, 46, 54, 0.6),
+    0 4px 4px 1px rgba(37, 46, 54, 0.3);
+}
+
+.form-title {
+    width: 100%;
+}
+
+.form-row {
+    width: 50%;
+}
