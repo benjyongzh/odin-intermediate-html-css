@@ -148,7 +148,8 @@ body {
     color: var(--color-dark);
 }
 
-.form-row input {
+.form-row input,
+.form-row input:placeholder-shown {
     font-size: var(--font-medium);
     color: var(--color-dark);
     border-radius: 4px;
@@ -156,6 +157,9 @@ body {
     width: 95%;
     height: 30px;
     padding: 8px;
+    transition: border 0.2s linear,
+                background-color 0.2s linear,
+                box-shadow 0.2s linear;
 }
 
 .form-row input[type=number]::-webkit-inner-spin-button,
@@ -164,22 +168,25 @@ body {
 }
 
 
-.form-row input:focus {
+.form-row input:focus,
+.form-row input:focus:valid,
+.form-row input:focus:invalid {
     border: 2px solid var(--color-dark);
     outline: none;
     box-shadow: 2px 2px 3px 1px var(--color-shadow);
 }
 
-/* .form-row input:required:valid {
+.form-row input[required]:valid,
+.form-row input:not(:placeholder-shown):valid{
     border: 2px solid var(--color-accent);
     outline: none;
     background-color: var(--color-valid);
-} */
+}
 
-/* .form-row input:invalid {
+.form-row input:not(:placeholder-shown):invalid {
     border: 2px solid var(--color-error);
     outline: none;
-} */
+}
 
 .form-row input.error {
     border: 2px solid var(--color-error);
@@ -211,6 +218,10 @@ body {
     align-items: center;
     justify-content: center;
     margin-top: 10px;
+    transition: border 0.1s linear,
+                background-color 0.1s linear,
+                color 0.1s linear,
+                box-shadow 0.1s linear;
 }
 
 .form-container .form-submit>input[type='submit']:hover {
