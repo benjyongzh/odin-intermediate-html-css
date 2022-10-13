@@ -154,6 +154,7 @@ body {
     color: var(--color-dark);
     border-radius: 4px;
     border: 2px solid var(--color-unfocus);
+    background-color: rgb(248, 248, 248);
     width: 95%;
     height: 30px;
     padding: 8px;
@@ -174,6 +175,7 @@ body {
     border: 2px solid var(--color-dark);
     outline: none;
     box-shadow: 2px 2px 3px 1px var(--color-shadow);
+    background-color: rgb(248, 248, 248);
 }
 
 .form-row input[required]:valid,
@@ -183,9 +185,11 @@ body {
     background-color: var(--color-valid);
 }
 
-.form-row input:not(:placeholder-shown):invalid {
+.form-row input:not(:placeholder-shown):invalid,
+.form-row input:optional:invalid {
     border: 2px solid var(--color-error);
     outline: none;
+    background-color: var(--color-detail);
 }
 
 .form-row input.error {
