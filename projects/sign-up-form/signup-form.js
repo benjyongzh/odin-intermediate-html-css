@@ -28,14 +28,14 @@ function validateInputs() {
 
         const inputID = formInput.getAttribute("id");
 
-        //phone number check
+        /* //phone number check
         if (inputID == "phone-number") {
             if (formInput.value.length != 8) {
                 formInput.classList.add('error');
                 console.log("phone number should be 8 digits")
                 //return false;
             };
-        }
+        } */
 
         //password check same
         else if (inputID == "password") {
