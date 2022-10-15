@@ -12,24 +12,35 @@ let passwordIdentical=false;
 function checkPasswordSame(event){
     if (passwordInput.matches(':invalid') || passwordConfirmInput.matches(':invalid')) {
         //passwordIdentical=false;
-        passwordInput.classList.add('error');
-        passwordConfirmInput.classList.add('error');
+        passwordAddError();
         // console.log("passwords are invalid");
         return;
-    }
+    };
 
     if(passwordInput.value.toString() === passwordConfirmInput.value.toString()){
         passwordIdentical = true;
-        passwordInput.classList.remove('error');
-        passwordConfirmInput.classList.remove('error');
+        passwordRemoveError();
         //console.log("passwords are the same");
     } else {
         passwordIdentical=false;
-        passwordInput.classList.add('error');
-        passwordConfirmInput.classList.add('error');
+        passwordAddError();
         //console.log("passwords must be same");
-    }
-}
+    };
+};
+
+function passwordAddError() {
+    passwordInput.classList.add('error');
+    passwordConfirmInput.classList.add('error');
+    passwordInput.parentElement.setAttribute("error-message", "* passwords must be identical");
+
+};
+
+function passwordRemoveError() {
+    passwordInput.classList.remove('error');
+    passwordConfirmInput.classList.remove('error');
+    passwordInput.parentElement.setAttribute("error-message", "");
+
+};
 
 function onSubmit(event){
     checkPasswordSame();
