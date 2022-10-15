@@ -26,20 +26,23 @@
 
 body {
     margin: 0;
+    padding: auto;
     background-color: rgb(41, 44, 48);
     display: flex;
     justify-content: center;
-    overflow: auto;
+    align-items: center;
 }
 
 .container {
+    margin: auto;
     display: flex;
     align-items: center;
     justify-content: flex-start;
     width: min(1200px, 100%);
     height: 100vh;
-    /* aspect-ratio: 4/3; */
-    position: fixed;
+    aspect-ratio: 4 / 3;
+    /* position: relative; */
+    /* border: 2px solid red; */
 }
 
 .sidebar {
@@ -80,10 +83,11 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: stretch;
+    align-items: flex-start;
     flex: 6;
     height: 100%;
-    gap: 35px;
+    gap: 1rem;
+    padding-top: 4rem;
     background-color: var(--color-light);
 }
 
@@ -96,8 +100,8 @@ body {
 
 .content-area>header,
 .form-section {
-    padding-left: 50px;
-    padding-right: 150px;
+    padding-left: max(20px, 50px);
+    padding-right: min(20px, 150px);
 }
 
 .content-area>.checker,
@@ -110,7 +114,7 @@ body {
     flex-direction: column;
     align-items: flex-start;
     justify-content: space-between;
-    gap:20px;
+    gap:1.5rem;
 }
 
 .form-section {
@@ -118,11 +122,11 @@ body {
     flex-wrap: wrap;
     justify-content: flex-start;
     align-items: flex-start;
-    row-gap: 20px;
+    row-gap: 1.5rem;
     box-shadow: 0 1px 2px 1px var(--color-shadow),
     0 4px 6px 1px var(--color-shadow);
-    padding-top: 25px;
-    padding-bottom: 25px;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
     /* background-color: rgb(201, 207, 212); */
     background-color: rgb(209, 215, 219);
 }
@@ -132,13 +136,13 @@ body {
 }
 
 .form-row {
-    width: 47%;
+    width: max(250px, 47%);
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
-    gap: 1px;
-    padding-bottom: 15px;
+    gap: 2px;
+    padding-bottom: 0.5rem;
     margin-right: 15px;
 }
 
@@ -158,8 +162,8 @@ body {
     border: 2px solid var(--color-unfocus);
     background-color: rgb(248, 248, 248);
     width: 95%;
-    height: 30px;
-    padding: 8px;
+    height: 2.5rem;
+    padding: 0.5rem;
     transition: border 0.2s linear,
                 background-color 0.2s linear,
                 box-shadow 0.2s linear;
@@ -200,7 +204,7 @@ body {
     font-size: var(--font-small);
     font-weight: bold;
     margin-left: 5px;
-    margin-top: 55px;
+    margin-top: 4rem;
     position: absolute;
 }
 
@@ -227,7 +231,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 10px;
+    margin-top: 1rem;
     transition: border 0.1s linear,
                 background-color 0.1s linear,
                 color 0.1s linear,

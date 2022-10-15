@@ -1,66 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign-up Form</title>
-    <link rel="stylesheet" href="./styles.css">
-    <script src="./signup-form.js" defer></script>
-</head>
-<body>
-    <div class="container">
-        <div class="sidebar">
-            <div class="main-title-box">
-                <div class="main-title">Odin</div>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Sign-up Form</title>
+        <link rel="stylesheet" href="./styles.css">
+        <script src="./signup-form.js" defer></script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="sidebar">
+                <div class="main-title-box">
+                    <div class="main-title">Odin</div>
+                </div>
+                <div class="photo-credit">Photo by Patrick Hendry (@worldsbetweenlines) on Unsplash</div>
             </div>
-            <div class="photo-credit">Photo by Patrick Hendry (@worldsbetweenlines) on Unsplash</div>
+
+            <div class="content-area">
+
+                <header>This is test form. Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis suscipit vel cupiditate ipsum consequatur eaque nam consectetur earum iste autem!</header>
+
+                <form class="form-container" action="#" target="_blank" method="post">
+                    
+                    <div class="form-section">
+                        <div class="form-title">Let's do this!</div>
+
+                        <div class="form-row" error-message = "">
+                            <label for="first-name">First Name</label>
+                            <input type="text" id="first-name" name="userFirstName" placeholder="John" pattern="[a-zA-Z]*" required value ="">
+                        </div>
+                        <div class="form-row" error-message = "">
+                            <label for="last-name">Last Name</label>
+                            <input type="text" id="last-name" name="userLastName" placeholder="Smith" pattern="[a-zA-Z]*" value ="">
+                        </div>
+                        <div class="form-row" error-message = "">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="userEmail" placeholder="John-Smith123@456mail.com" value ="">
+                        </div>
+                        <div class="form-row" error-message = "">
+                            <label for="phone-number">Phone Number</label>
+                            <input type="tel" id="phone-number" name="userPhoneNumber" placeholder="your number" pattern="[689][0-9]{7}" title="Please enter a valid phone number" value ="">
+                        </div>
+                        <div class="form-row" error-message = "">
+                            <label for="password">Password</label>
+                            <input type="password" id="password" name="userPassword" placeholder="********" pattern="[a-zA-Z0-9]{6,15}" title="Please enter a password consisting of 6 to 15 alphanumeric characters." required value ="">
+                        </div>
+                        <div class="form-row" error-message = "">
+                            <label for="passwordConfirm">Confirm Password</label>
+                            <input type="password" id="passwordConfirm" name="userPasswordConfirm" placeholder="********" pattern="[a-zA-Z0-9]{6,15}" title="Please enter a password consisting of 6 to 15 alphanumeric characters." required value ="">
+                        </div>
+                    </div>
+
+                    <div class="form-submit">
+                        <input type="submit" value="Sign up">
+                    </div>
+
+                </form>
+
+                <div class="checker">Already have an account? <a href="#" target="_blank">Login</a>.</div>
+            </div>
+
         </div>
-
-        <div class="content-area">
-
-            <header>This is test form. Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis suscipit vel cupiditate ipsum consequatur eaque nam consectetur earum iste autem!</header>
-
-            <form class="form-container" action="#" target="_blank" method="post">
-                
-                <div class="form-section">
-                    <div class="form-title">Let's do this!</div>
-
-                    <div class="form-row" error-message = "">
-                        <label for="first-name">First Name</label>
-                        <input type="text" id="first-name" name="userFirstName" placeholder="John" pattern="[a-zA-Z]*" required value ="">
-                    </div>
-                    <div class="form-row" error-message = "">
-                        <label for="last-name">Last Name</label>
-                        <input type="text" id="last-name" name="userLastName" placeholder="Smith" pattern="[a-zA-Z]*" value ="">
-                    </div>
-                    <div class="form-row" error-message = "">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="userEmail" placeholder="John-Smith123@456mail.com" value ="">
-                    </div>
-                    <div class="form-row" error-message = "">
-                        <label for="phone-number">Phone Number</label>
-                        <input type="tel" id="phone-number" name="userPhoneNumber" placeholder="your number" pattern="[689][0-9]{7}" title="Please enter a valid phone number" value ="">
-                    </div>
-                    <div class="form-row" error-message = "">
-                        <label for="password">Password</label>
-                        <input type="password" id="password" name="userPassword" placeholder="********" pattern="[a-zA-Z0-9]{6,15}" title="Please enter a password consisting of 6 to 15 alphanumeric characters." required value ="">
-                    </div>
-                    <div class="form-row" error-message = "">
-                        <label for="passwordConfirm">Confirm Password</label>
-                        <input type="password" id="passwordConfirm" name="userPasswordConfirm" placeholder="********" pattern="[a-zA-Z0-9]{6,15}" title="Please enter a password consisting of 6 to 15 alphanumeric characters." required value ="">
-                    </div>
-                </div>
-
-                <div class="form-submit">
-                    <input type="submit" value="Sign up">
-                </div>
-
-            </form>
-
-            <div class="checker">Already have an account? <a href="#" target="_blank">Login</a>.</div>
-        </div>
-
-    </div>
     </body>
 </html>
