@@ -191,6 +191,13 @@ body {
     background-color: var(--color-valid);
 }
 
+.error::after {
+    content: "u suck";
+    color: var(--color-error);
+    display: inline;
+    font-size: var(--font-error);
+}
+
 /* .form-row input.error::after {
     content: "u suck";
     color: var(--color-error);
