@@ -81,22 +81,41 @@
     border-radius: 10px;
   }
   
-  
   .sidebar .side-content {
     background-color: white;
     color: black;
     font-size: 16px;
     font-weight: normal;
   }
+
+  .sidebar photo,
+  .sidebar .side-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
   
   .nav {
     background-color: #FF7755;
     grid-area: 2/2/span 1/-1;
+    display: grid;
+    grid-template: 1fr / 1fr;
+  }
+
+  .nav ul {
+    display: grid;
+    grid-template: 1fr / repeat(3, 1fr);
   }
   
   .nav ul li {
     font-size: 16px;
     text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    list-style: none;
+
   }
   
   .article {
