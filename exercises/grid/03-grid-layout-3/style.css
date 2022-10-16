@@ -68,6 +68,9 @@
   .sidebar {
     background-color: #FF7755;
     grid-area:2/1/-2/2;
+    display: grid;
+    grid-template: repeat(4, 1fr) / 1fr;
+    gap: 30px;
   }
   
   .sidebar .photo {
