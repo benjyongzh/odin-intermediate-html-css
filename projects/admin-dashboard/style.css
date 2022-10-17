@@ -97,6 +97,8 @@ body {
     grid-auto-flow: column;
     padding: 20px 40px;
     grid-template-columns: 1fr;
+    gap: 40px;
+    align-items: stretch;
 }
 
 .main>.header div {
@@ -125,6 +127,12 @@ body {
     font-weight: bold;
 }
 
+.main>.header div.header-name {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .main>.header ul {
     display: grid;
     gap: 20px;
@@ -134,7 +142,6 @@ body {
     display: grid;
     grid-auto-flow: column;
     gap: 15px;
-    grid-template-columns: 1fr;
     grid-template-rows: 1fr;
     justify-content: start;
 }
@@ -145,4 +152,30 @@ body {
 
 .main>.header>.header-bottom-row>.header-greeting p.greeting {
     font-size: 22px;
+}
+
+.main>.header>.header-bottom-row>.header-nav{
+    display: grid;
+    grid-template: 1fr / 1fr;
+    align-items: stretch;
+}
+
+.main>.header>.header-bottom-row>.header-nav ul {
+    display:grid;
+    grid-auto-flow: column;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 25px;
+    align-content: center;
+}
+
+.main>.header>.header-bottom-row>.header-nav li {
+    border-radius: 18px;
+    background-color: var(--dashboard-bg-color);
+    color: var(--dashboard-font-color);
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    width: 100px;
+    height: 36px;
+    font-size: 16px;
 }
