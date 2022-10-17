@@ -4,19 +4,18 @@
     border: 1px solid black;
     box-sizing: border-box;
     font-family: 'Manrope', Arial, sans-serif;
-    font-weight: normal;
+    font-weight: bold;
     margin: 0;
     padding: 0;
     list-style: none;
     text-decoration: none;
-
 }
 
 :root {
     --dashboard-font-color: rgb(238, 238, 238);
     --dashboard-bg-color: rgb(89, 164, 207);
     --standard-font-color: rgb(29, 29, 29);
-    --standard-bg-color: rgb(233, 233, 233);
+    --standard-bg-color: rgb(243, 243, 243);
     --standard-bg-color-bg: rgb(192, 192, 192);
     --standard-shadow-color: rgba(34, 34, 34, 0.1);
     
@@ -25,6 +24,10 @@
 body {
     height: 100vh;
     /* position: fixed; */
+}
+
+.display-photo {
+    border-radius: 50%;
 }
 
 .container {
@@ -71,4 +74,75 @@ body {
 .dashboard-sidebar li {
     font-size: 18px;
     font-weight: bold;
+}
+
+.main {
+    display: grid;
+    grid-auto-flow: row;
+    grid-template-rows: 125px auto;
+}
+
+.main>.header {
+    display: grid;
+    grid-auto-flow: row;
+    grid-template-rows: 5fr 6fr;
+    background-color: var(--standard-bg-color);
+    box-shadow: 0 2px 2px 1px var(--standard-shadow-color);
+    color: var(--standard-font-color);
+}
+
+.main>.header>.header-top-row,
+.main>.header>.header-bottom-row {
+    display:grid;
+    grid-auto-flow: column;
+    padding: 20px 40px;
+    grid-template-columns: 1fr;
+}
+
+.main>.header div {
+    align-items: center;
+    /* height: 100%; */
+}
+
+.main>.header .searchbar {
+    display: grid;
+    grid-auto-flow: column;
+    /* grid-template-columns: 1fr; */
+    grid-template-rows: 1fr;
+    height: 100%;
+    gap: 10px;
+    justify-items: start;
+}
+
+.main>.header .searchbar input[type='text'] {
+
+    height: 100%;
+    width: min(80%, 650px);
+    border-radius: 20px;
+    background-color: var(--standard-bg-color-bg);
+    padding: 5px 15px;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.main>.header ul {
+    display: grid;
+    gap: 20px;
+}
+
+.main>.header>.header-bottom-row>.header-greeting {
+    display: grid;
+    grid-auto-flow: column;
+    gap: 15px;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    justify-content: start;
+}
+
+.main>.header>.header-bottom-row>.header-greeting p:not(.greeting) {
+    font-size: 15px;
+}
+
+.main>.header>.header-bottom-row>.header-greeting p.greeting {
+    font-size: 22px;
 }
