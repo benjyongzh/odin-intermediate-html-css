@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;700&display=swap');
 
 * {
-    border: 1px solid black;
+    /* border: 1px solid black; */
     box-sizing: border-box;
     font-family: 'Manrope', Arial, sans-serif;
     font-weight: bold;
@@ -62,7 +62,7 @@ body {
 
 .dashboard-sidebar ul {
     display: grid;
-    gap: 12px;
+    gap: 15px;
 }
 
 .dashboard-navbar ul li::before {
@@ -72,7 +72,7 @@ body {
 }
 
 .dashboard-sidebar li {
-    font-size: 18px;
+    font-size: 16px;
     font-weight: bold;
 }
 
@@ -87,8 +87,9 @@ body {
     grid-auto-flow: row;
     grid-template-rows: 5fr 6fr;
     background-color: var(--standard-bg-color);
-    box-shadow: 0 2px 2px 1px var(--standard-shadow-color);
+    box-shadow: 0 3px 4px 1px var(--standard-shadow-color);
     color: var(--standard-font-color);
+    z-index: -1;
 }
 
 .main>.header>.header-top-row,
@@ -117,7 +118,6 @@ body {
 }
 
 .main>.header .searchbar input[type='text'] {
-
     height: 100%;
     width: min(80%, 650px);
     border-radius: 20px;
@@ -125,6 +125,11 @@ body {
     padding: 5px 15px;
     font-size: 15px;
     font-weight: bold;
+    border: 0px solid black;
+}
+
+.main>.header .searchbar input[type='text']:focus {
+    outline: none;
 }
 
 .main>.header div.header-name {
@@ -177,27 +182,28 @@ body {
     justify-content: center;
     width: 100px;
     height: 36px;
-    font-size: 16px;
+    font-size: 14px;
 }
 
 .content {
     display: grid;
     grid-auto-flow: column;
-    grid-template-columns: 5fr 2fr;
+    grid-template-columns: 1fr minmax(250px, 25%);
     padding: 25px;
     background-color: var(--standard-bg-color-bg);
     color: var(--standard-font-color);
     gap: 25px;
+    z-index: -2;
 }
 
 .content>.projects,
 .content>.content-sidebar>.announcements,
 .content>.content-sidebar>.trending {
     display: grid;
-    justify-content: stretch;
     align-items: start;
     align-content: start;
     gap: 15px;
+    grid-template-columns: 1fr;
 }
 
 
@@ -207,6 +213,7 @@ body {
     color: var(--standard-font-color);
     align-items: center;
     justify-content: flex-start;
+    margin-left: 5px;
 }
 
 
@@ -221,7 +228,7 @@ body {
     display: grid;
     gap: 12px;
     padding: 20px 15px;
-    box-shadow: 2px 2px 2px 1px var(--standard-shadow-color);
+    box-shadow: 1px 3px 4px 1px var(--standard-shadow-color);
     border-radius: 10px;
     border-left: 6px solid orange;
     background-color: var(--standard-bg-color);
@@ -252,6 +259,63 @@ body {
 .content>.content-sidebar {
     display: grid;
     justify-content: center;
-    align-items: start;
+    align-content: start;
     gap: 40px;
+}
+
+.content>.content-sidebar>.announcements>.announcements-area,
+.content>.content-sidebar>.trending>.trending-area {
+    display: grid;
+    align-items: start;
+    padding: 12px 24px;
+    background-color: var(--standard-bg-color);
+    box-shadow: 1px 3px 4px 1px var(--standard-shadow-color);
+    border-radius: 10px;
+}
+
+.content>.content-sidebar>.trending>.trending-area {
+    grid-template-rows: repeat(auto-fit, minmax(80px, 1fr));
+}
+
+.announcements-area>.announcement-card {
+    border-bottom: 2px solid var(--standard-shadow-color);
+    display: grid;
+    gap: 4px;
+    align-items: start;
+    padding: 12px 0px;
+}
+
+.announcements-area>.announcement-card>p.announcement-title {
+    font-size: 15px;
+}
+
+.announcements-area>.announcement-card>p.announcement-description {
+    font-size: 10px;
+    font-weight: normal;
+}
+
+.trending>.trending-area>.trending-card {
+    display: grid;
+    grid-auto-flow: column;
+    gap: 10px;
+    /* padding: 12px; */
+    grid-template-columns: auto 1fr;
+}
+
+.trending>.trending-area>.trending-card>.trending-text {
+    display: grid;
+    align-items: center;
+}
+
+.trending>.trending-area>.trending-card>.trending-text>p {
+    font-size: 10px;
+}
+
+.trending>.trending-area>.trending-card>.trending-text>p.trending-user-name::before {
+    content: "@";
+    display:inline;
+}
+
+.trending>.trending-area>.trending-card>.trending-text>p.trending-project-name {
+    font-weight: normal;
 }
