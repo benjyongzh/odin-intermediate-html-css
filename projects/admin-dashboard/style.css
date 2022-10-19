@@ -28,6 +28,21 @@ body {
 
 .display-photo {
     border-radius: 50%;
+    /* border: 1px solid black; */
+    height:35px;
+    width: 35px;
+    margin-bottom: 12%;
+}
+
+.display-photo#main-profile-image {
+    height:75px;
+    width: 75px;
+}
+
+.display-photo#trending-profile-image {
+    height:45px;
+    width: 45px;
+    margin-left: 10px;
 }
 
 .container {
@@ -133,12 +148,13 @@ body {
     grid-auto-flow: column;
     padding: 15px 40px;
     grid-template-columns: 1fr;
-    gap: 40px;
-    align-items: stretch;
+    gap: 20px;
+    align-items: center;
     /* border: 1px solid black; */
 }
 
-.header-top-row>div {
+.header-top-row>*,
+.header-bottom-row>* {
     align-self: center;
     /* border: 1px solid black; */
 }
@@ -372,7 +388,8 @@ body {
 
 .trending>.trending-area>.trending-card>.trending-text {
     display: grid;
-    align-items: center;
+    align-content: center;
+    gap: 5px;
 }
 
 .trending>.trending-area>.trending-card>.trending-text>p {
