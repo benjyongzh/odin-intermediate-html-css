@@ -135,6 +135,12 @@ body {
     grid-template-columns: 1fr;
     gap: 40px;
     align-items: stretch;
+    /* border: 1px solid black; */
+}
+
+.header-top-row>div {
+    align-self: center;
+    /* border: 1px solid black; */
 }
 
 .main>.header div {
@@ -150,6 +156,7 @@ body {
     height: 100%;
     gap: 10px;
     justify-items: start;
+    /* border: 1px solid black; */
 }
 
 .main>.header .searchbar input[type='text'] {
@@ -166,6 +173,13 @@ body {
 .main>.header .searchbar input[type='text']:focus {
     outline: none;
 }
+
+.material-symbols-outlined#notification-icon {
+    font-variation-settings:
+    'FILL' 1;
+    margin-top: 6px;
+    /* scale: 1.2; */
+  }
 
 .main>.header div.header-name {
     display:flex;
@@ -288,7 +302,14 @@ body {
     grid-auto-flow: column;
     justify-content: end;
     align-items: center;
-    gap: 5px;
+    gap: 10px;
+    padding-right: 5px;
+}
+
+.material-symbols-outlined#project-card-icon {
+  font-variation-settings:
+  'FILL' 0;
+  scale: 0.85
 }
 
 .content>.content-sidebar {
