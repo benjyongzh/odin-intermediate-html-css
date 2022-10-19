@@ -66,10 +66,24 @@ body {
     gap: 15px;
 }
 
-.dashboard-navbar ul li::before {
+/* .dashboard-navbar ul li::before {
     content: "icon";
     display: inline;
     margin-right: 5px;
+} */
+
+.dashboard-navbar ul li,
+.dashboard-settings ul li {
+    /* border: 1px solid black; */
+    display: grid;
+    gap: 15px;
+    grid-auto-flow: column;
+    align-items: center;
+    justify-content: start;
+}
+
+.dashboard-navbar ul li>.material-symbols-outlined {
+    /* displa */
 }
 
 .dashboard-sidebar li {
