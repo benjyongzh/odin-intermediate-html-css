@@ -53,13 +53,33 @@ body {
 .dashboard-title {
     font-size: 28px;
     font-weight: bold;
+    display: grid;
+    gap: 15px;
+    grid-auto-flow: column;
+    align-items: center;
+    justify-content: start;
+    /* border: 1px solid black; */
 }
 
-.dashboard-title::before {
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48
+}
+
+.material-symbols-outlined#dashboard-title-icon {
+    font-variation-settings:
+    'FILL' 1;
+    scale: 1.4;
+  }
+
+/* .dashboard-title::before {
     content: "icon";
     display: inline;
     margin-right: 5px;
-}
+} */
 
 .dashboard-sidebar ul {
     display: grid;
