@@ -1,5 +1,5 @@
 * {
-    border: 1px solid black;
+    /* border: 1px solid black; */
     list-style: none;
     margin: 0;
     padding: 0;
@@ -17,7 +17,7 @@
 body {
     height:100vh;
     width:100vw;
-    /* position: fixed; */
+    position: fixed;
     overflow: auto;
 }
 
@@ -28,6 +28,7 @@ body {
     grid-auto-flow: column;
     grid-template-columns: 1fr auto;
     grid-template-rows: 1fr;
+    background-color: var(--color-lightgrey);
 }
 
 .main {
@@ -36,6 +37,7 @@ body {
     grid-template-rows: auto;
     gap: 50px;
     align-content: start;
+    background-color: var(--color-lightgrey);
     
 }
 
@@ -72,6 +74,7 @@ body {
                 4px 8px 8px 1px var(--color-shadow);
     background-color: var(--color-accent);
     border: 0px solid black;
+    color: var(--color-darkgrey);
 }
 
 .main>.books {
@@ -94,6 +97,10 @@ body {
     gap: 10px;
 }
 
+.book>* {
+    color: var(--color-darkgrey);
+}
+
 .book>.book-title {
     display: flex;
     align-items: flex-start;
@@ -111,10 +118,100 @@ body {
     font-size: 20px;
     flex: 1;
     width: max(110px, 75%);
-    border-radius: 3px;
+    border-radius: 5px;
     background-color: var(--color-accent);
+
+    border: none;
 }
 
 .book>button.book-button-remove {
     background-color: var(--color-lightgrey);
+    margin-bottom: -15px;
+}
+
+.sidebar {
+    background-color: var(--color-shadow);
+    /* box-shadow: -0px 0 0px 1px var(--color-shadow),
+                -0px 0 0px 1px var(--color-shadow),
+                -0px 0 0px 1px var(--color-shadow); */
+    box-shadow: -1px 0 2px 1px var(--color-shadow),
+                -2px 0 4px 1px var(--color-shadow),
+                -4px 0 8px 1px var(--color-shadow);
+
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 40px;
+}
+
+/* .sidebar.adding-book {
+    box-shadow: -1px 0 2px 1px var(--color-shadow),
+                -2px 0 4px 1px var(--color-shadow),
+                -4px 0 8px 1px var(--color-shadow);
+} */
+
+.sidebar>form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 30px;
+    height: 100%;
+}
+
+form>* {
+    color: var(--color-darkgrey)
+}
+
+.form-header {
+    font-size: 26px;
+}
+
+.form-text {
+    font-size: 16px;
+}
+
+.form-input {
+    width: 100%;
+    display: flex;
+    gap: 5px;
+    height: 25px;
+}
+
+.form-input>label {
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 2px;
+}
+
+.form-input>input {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    border-bottom: 1px solid var(--color-darkgrey);
+    height: 100%;
+    outline: none;
+    font-size: 16px;
+    padding-left: 5px;
+}
+
+form.form-book-add>button[type='submit'] {
+    background-color: var(--color-accent);
+    padding: 0.5rem 2rem;
+    font-size: 20px;
+    align-self: center;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 1px 1px 1px 1px var(--color-shadow),
+                2px 4px 4px 1px var(--color-shadow),
+                4px 8px 8px 1px var(--color-shadow);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-self: flex-end;
+
 }
