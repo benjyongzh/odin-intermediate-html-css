@@ -79,54 +79,84 @@ body {
 
 .main>.books {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(150px, 0.6fr));
     grid-auto-rows: minmax(250px, 1fr);
     gap: 40px;
+    justify-content: center;
 }
 
 .book {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    padding: 25px;
-    border-radius: 5px;
+    display: grid;
+    grid-template-rows: 2fr 2fr;
+    grid-template-columns: 1fr;
+    align-items: stretch;
+    justify-content: center;
+    padding: 20px;
+    border-radius: 8px;
     box-shadow: 1px 1px 1px 1px var(--color-shadow),
-                2px 4px 4px 1px var(--color-shadow),
-                4px 8px 8px 1px var(--color-shadow);
-    gap: 10px;
+                2px 2px 4px 1px var(--color-shadow),
+                4px 4px 8px 1px var(--color-shadow);
+    gap: 8%;
+    transition: 0.15s ease-in-out;
 }
 
 .book>* {
     color: var(--color-darkgrey);
+    /* border:1px solid black; */
 }
 
 .book>.book-title {
     display: flex;
     align-items: flex-start;
-
     justify-content: center;
-    font-size: 24px;
+    font-size: 20px;
     flex: 3;
     
 }
 
-.book>button {
+.book>.book-button-area {
+    display: grid;
+    grid-template: auto auto / 1fr;
+    /* grid-template-columns: 1fr; */
+    border-top: 0px solid var(--color-darkgrey);
+    border-bottom: 0px solid var(--color-darkgrey);
+    gap: 15%;
+    justify-items: center;
+    /* align-items: center; */
+    /* width: max(110px, 75%); */
+    width: 100%;
+    transform: scaleY(0);
+    opacity: 0;
+    transition: 0.15s ease-in-out;
+    padding: 8% 0px;
+}
+
+.book:hover>.book-button-area {
+    border-top: 1px solid var(--color-darkgrey);
+    border-bottom: 1px solid var(--color-darkgrey);
+    transform: scaleY(1);
+    opacity: 1;
+}
+
+.book>.book-button-area>button {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 20px;
-    flex: 1;
-    width: max(110px, 75%);
+    font-size: 14px;
+    /* flex: 1; */
+    width: min(100px, 100%);
+   /*  width: 100%; */
     border-radius: 5px;
     background-color: var(--color-accent);
-
     border: none;
+    color: var(--color-darkgrey);
+    /* padding: 0.3rem 0.9rem; */
+    box-sizing: border-box;
 }
 
-.book>button.book-button-remove {
+.book>.book-button-area>button.book-button-remove {
     background-color: var(--color-lightgrey);
-    margin-bottom: -15px;
+    border: 2px solid var(--color-shadow)
 }
 
 .sidebar {
@@ -202,7 +232,7 @@ form>* {
 form.form-book-add>button[type='submit'] {
     background-color: var(--color-accent);
     padding: 0.5rem 2rem;
-    font-size: 20px;
+    font-size: 16px;
     align-self: center;
     border-radius: 5px;
     border: none;
