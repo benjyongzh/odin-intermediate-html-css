@@ -26,10 +26,15 @@ body {
     width: 100%;
     display: grid;
     grid-auto-flow: column;
-    grid-template-columns: 1fr auto;
+    /* grid-template-columns: 100% auto; */
     grid-template-rows: 1fr;
     background-color: var(--color-lightgrey);
+    transition: 0.15s ease-in-out;
 }
+
+/* .container.adding-book {
+    grid-template-columns: 76% auto;
+} */
 
 .main {
     padding: 50px max(15px, 16%);
@@ -127,7 +132,7 @@ body {
     width: 100%;
     transform: scaleY(0);
     opacity: 0;
-    transition: 0.15s ease-in-out;
+    transition: 0.10s ease-in-out;
     padding: 8% 0px;
 }
 
@@ -229,11 +234,22 @@ form>* {
     padding-left: 5px;
 }
 
-form.form-book-add>button[type='submit'] {
-    background-color: var(--color-accent);
-    padding: 0.5rem 2rem;
-    font-size: 16px;
+form.form-book-add>.book-add-buttons-area {
+    display: flex;
+    gap: 20px;
+    /* border: 1px solid black; */
+    justify-content: center;
+    align-items: center;
     align-self: center;
+    width: 100%;
+}
+
+.book-add-buttons-area>button {
+    background-color: var(--color-accent);
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    width: min(100%, 100px);
+    font-size: 16px;
     border-radius: 5px;
     border: none;
     box-shadow: 1px 1px 1px 1px var(--color-shadow),
@@ -243,5 +259,8 @@ form.form-book-add>button[type='submit'] {
     align-items: center;
     justify-content: center;
     justify-self: flex-end;
+}
 
+.book-add-buttons-area>button.book-add-cancel {
+    background-color: var(--color-bg)
 }
