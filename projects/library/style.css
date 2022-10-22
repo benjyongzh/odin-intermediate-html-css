@@ -8,6 +8,7 @@
 
 :root {
     --color-lightgrey: rgb(238, 238, 238);
+    --color-mediumgrey: rgb(145, 142, 136);
     --color-darkgrey: rgb(61, 60, 58);
     --color-bg: rgb(238, 233, 225);
     --color-accent: rgb(253, 203, 110);
@@ -39,7 +40,7 @@ body {
     align-content: start;
     background-color: var(--color-lightgrey);
     width: 100vw;
-    transition: 0.07s linear;
+    transition: 0.1s ease-in-out;
 }
 
 .main.adding-book {
@@ -80,6 +81,13 @@ body {
     background-color: var(--color-accent);
     border: 0px solid black;
     color: var(--color-darkgrey);
+}
+
+.header>button.button-add.adding-book {
+    background-color: var(--color-lightgrey);
+    color: var(--color-mediumgrey);
+    box-shadow: 1px 1px 1px 1px var(--color-shadow),
+                2px 4px 4px 1px var(--color-shadow);
 }
 
 .main>.books {
@@ -176,8 +184,8 @@ body {
     display: flex;
     flex-direction: column;
     padding: 40px;
-    align-items: flex-start;
-    justify-content: flex-start;
+    align-items: stretch;
+    justify-content: center;
     gap: 40px;
     /* width: calc(100vw-var(--main-width)); */
     width: 24vw;
@@ -200,14 +208,15 @@ body {
 .sidebar>form {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: stretch;
     justify-content: flex-start;
     gap: 30px;
     height: 100%;
 }
 
 form>* {
-    color: var(--color-darkgrey)
+    color: var(--color-darkgrey);
+    /* border: 1px solid black; */
 }
 
 .form-header {
@@ -245,6 +254,7 @@ form>* {
 }
 
 form.form-book-add>.book-add-buttons-area {
+    margin-top: 40px;
     display: flex;
     gap: 20px;
     flex-direction: column;
@@ -257,9 +267,10 @@ form.form-book-add>.book-add-buttons-area {
 
 .book-add-buttons-area>button {
     background-color: var(--color-accent);
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
-    width: min(100%, 180px);
+    color: var(--color-darkgrey);
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    width: min(100%, 200px);
     font-size: 16px;
     border-radius: 5px;
     border: none;
