@@ -142,7 +142,7 @@ body {
     /* grid-template-columns: 1fr; */
     border-top: 0px solid var(--color-darkgrey);
     border-bottom: 0px solid var(--color-darkgrey);
-    gap: 15%;
+    gap: 10px;
     justify-items: center;
     /* align-items: center; */
     /* width: max(110px, 75%); */
@@ -150,7 +150,7 @@ body {
     transform: scaleY(0);
     opacity: 0;
     transition: 0.10s ease-in-out;
-    padding: 8% 0px;
+    padding: 10px 0px;
 }
 
 .book:hover>.book-button-area {

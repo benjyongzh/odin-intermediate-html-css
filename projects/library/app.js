@@ -15,6 +15,8 @@ const sideBarConfirmButton = sideBarForm.querySelector('button[type="submit"]');
 const sideBarCancelButton = sideBarForm.querySelector('.book-add-cancel');
 sideBarCancelButton.addEventListener('click', closeSideBar);
 
+let myLibrary = [];
+
 function openSideBar(event) {
     if (event.target.classList.contains('adding-book')) return;
     mainArea.classList.add('adding-book');
@@ -33,12 +35,29 @@ function closeSideBar(event) {
     /* sideBarForm.reset(); */
 };
 
+function book(bookName, bookAuthor="undefined", bookPages="0", bookReadStatus) {
+    this.bookName = bookName;
+    this.bookAuthor = bookAuthor;
+    this.bookPages = bookPages;
+    this.bookReadStatus = bookReadStatus;
+}
+
+book.prototype.toggleReadStatus = () => {
+    this.bookReadStatus = !this.bookReadStatus;
+}
+
 function addNewBook(event){
     //add new book
     event.preventDefault();
     const newBookData = new FormData(event.target);
     const formProps = Object.fromEntries(newBookData);
     console.log(formProps);
+    const newBookObject = new book(
+        formProps.bookName,
+        formProps.bookAuthor,
+        formProps.bookPages,
+        formProps.bookReadStatus,
+    );
 
     const newBook = document.createElement("div");
     newBook.classList.add('book');
@@ -64,6 +83,9 @@ function addNewBook(event){
     newBookButtonRemove.textContent = 'Remove';
     newBookButtonRemove.addEventListener('click', removeBook);
     newBookButtonArea.appendChild(newBookButtonRemove);
+
+    //add html book into book object
+    newBookObject.component = newBook;
     
     //check read status
     if (formProps.bookReadStatus) {
@@ -73,6 +95,9 @@ function addNewBook(event){
 
     //clear form
     event.target.reset();
+
+    myLibrary.push(newBookObject);
+    console.log(myLibrary);
 }
 
 function toggleReadStatus(event) {
