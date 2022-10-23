@@ -65,6 +65,8 @@ function addNewBook(event){
 
     const newBookBackground = document.createElement('div');
     newBookBackground.classList.add('book-background');
+    let randomNumber = Math.floor(Math.random()*1000);
+    newBookBackground.style.backgroundImage = `url('https://picsum.photos/seed/${randomNumber}/300/400')`;
     newBook.appendChild(newBookBackground);
 
     const newBookTitle = document.createElement('div');
