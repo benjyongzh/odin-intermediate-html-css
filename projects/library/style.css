@@ -118,6 +118,15 @@ body {
     /* border:1px solid black; */
 }
 
+.book.book-status-read {
+    background-color: var(--color-accent);
+}
+
+.book.book-status-read>.book-button-area>button.book-button-read {
+    background-color: var(--color-lightgrey);
+    border: 2px solid var(--color-shadow);
+}
+
 .book>.book-title {
     display: flex;
     align-items: flex-start;
@@ -161,7 +170,7 @@ body {
    /*  width: 100%; */
     border-radius: 5px;
     background-color: var(--color-accent);
-    border: none;
+    border: 2px solid var(--color-accent);
     color: var(--color-darkgrey);
     /* padding: 0.3rem 0.9rem; */
     box-sizing: border-box;
