@@ -23,7 +23,6 @@ function openSideBar(event) {
     sideBar.classList.add('adding-book');
     event.target.classList.add('adding-book');
     event.target.textContent = "Adding New Book...";
-    /* console.log("lmao open"); */
 };
 
 function closeSideBar(event) {
@@ -31,27 +30,31 @@ function closeSideBar(event) {
     sideBar.classList.remove('adding-book');
     mainBookAddButton.classList.remove('adding-book');
     mainBookAddButton.textContent = "Add New Book";
-    /* console.log("lmao close"); */
-    /* sideBarForm.reset(); */
 };
 
-function book(bookName, bookAuthor="undefined", bookPages="0", bookReadStatus) {
-    this.bookName = bookName;
-    this.bookAuthor = bookAuthor;
-    this.bookPages = bookPages;
-    this.bookReadStatus = bookReadStatus;
+function book(bookName, bookAuthor="undefined", bookPages="0", bookReadStatus=false) {
+    return {bookName, bookAuthor, bookPages, bookReadStatus};
 }
 
-book.prototype.toggleReadStatus = () => {
+book.prototype.toggleRead = () => {
     this.bookReadStatus = !this.bookReadStatus;
-}
+    this.component.classList.toggle('book-status-read');
+    const buttonRead = this.component.querySelector('button.book-button-read');
+    console.log(buttonRead);
+    if (buttonRead.textContent == "Read") {
+        buttonRead.textContent = "Un-read";
+    } else {
+        buttonRead.textContent = "Read";
+    };
+    console.log(`book status is now $(this.bookReadStatus)`);
+};
 
 function addNewBook(event){
     //add new book
     event.preventDefault();
     const newBookData = new FormData(event.target);
     const formProps = Object.fromEntries(newBookData);
-    console.log(formProps);
+    //console.log(formProps);
     const newBookObject = new book(
         formProps.bookName,
         formProps.bookAuthor,
@@ -102,24 +105,21 @@ function addNewBook(event){
     //clear form
     event.target.reset();
 
+    //add book object to library array
     myLibrary.push(newBookObject);
-    console.log(myLibrary);
+    //console.log(myLibrary);
 }
 
 function toggleReadStatus(event) {
     //find book parent
-    const bookParent = event.target.parentElement.parentElement;
+    const bookObject = myLibrary.filter(book => book.component.querySelector('button.book-button-read') == event.target)[0];
     //toggle status
-    bookParent.classList.toggle('book-status-read');
-    if (event.target.textContent == "Read") {
-        event.target.textContent = "Un-read";
-    } else {
-        event.target.textContent = "Read";
-    };
+    bookObject.toggleRead();
 }
 
 function removeBook(event) {
     //find book parent
+    // const bookObject = myLibrary.filter(book => book.component.querySelector('button.book-button-read') == event.target);
     const bookParent = event.target.parentElement.parentElement;
     //delete book
     bookParent.remove();
