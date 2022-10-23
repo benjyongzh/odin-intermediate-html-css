@@ -63,6 +63,10 @@ function addNewBook(event){
     newBook.classList.add('book');
     booksArea.appendChild(newBook);
 
+    const newBookBackground = document.createElement('div');
+    newBookBackground.classList.add('book-background');
+    newBook.appendChild(newBookBackground);
+
     const newBookTitle = document.createElement('div');
     newBookTitle.classList.add('book-title');
     newBookTitle.textContent = formProps.bookName;
