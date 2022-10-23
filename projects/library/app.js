@@ -6,9 +6,12 @@ mainBookAddButton.addEventListener('click', openSideBar);
 
 const sideBar = document.querySelector('.sidebar');
 
-const sideBarConfirmButton = sideBar.querySelector('button[type="submit"]');
-sideBarConfirmButton.addEventListener('click', addNewBook);
-const sideBarCancelButton = sideBar.querySelector('.book-add-cancel');
+const sideBarForm = sideBar.querySelector('form');
+sideBarForm.addEventListener('submit', addNewBook);
+
+const sideBarConfirmButton = sideBarForm.querySelector('button[type="submit"]');
+/* sideBarConfirmButton.addEventListener('click', addNewBook); */
+const sideBarCancelButton = sideBarForm.querySelector('.book-add-cancel');
 sideBarCancelButton.addEventListener('click', closeSideBar);
 
 function openSideBar(event) {
@@ -30,4 +33,15 @@ function closeSideBar(event) {
 
 function addNewBook(event){
     //check if form fields are valid
+    event.preventDefault();
+    const newBookData = new FormData(event.target);
+    const formProps = Object.fromEntries(newBookData);
+    console.log(formProps);
+
+
+    /* const newBook = document.createElement("div");
+    newBook.classList.add('book');
+    const newBookTitle = document.createElement('div');
+    newBookTitle.classList.add('book-title'); */
+    // newBookTitle
 }

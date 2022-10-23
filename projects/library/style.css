@@ -230,8 +230,10 @@ form>* {
 .form-input {
     width: 100%;
     display: flex;
+    /* justify-items: flex-start; */
+    align-items: center;
     gap: 5px;
-    height: 25px;
+    height: 35px;
 }
 
 .form-input>label {
@@ -240,6 +242,7 @@ form>* {
     align-items: center;
     justify-content: flex-start;
     margin-bottom: 2px;
+    white-space: nowrap;
 }
 
 .form-input>input {
@@ -251,6 +254,12 @@ form>* {
     outline: none;
     font-size: 16px;
     padding-left: 5px;
+}
+
+.form-input>input[type='checkbox'] {
+    margin-left: 10px;
+    width: auto;
+    transform: scale(1.5);
 }
 
 form.form-book-add>.book-add-buttons-area {
