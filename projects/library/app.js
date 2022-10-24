@@ -42,9 +42,15 @@ function bookToggleRead() {
     } else {
         buttonRead.textContent = "Read";
     };
-    console.log(`book status is now ${this.bookReadStatus}`);
-    console.log(myLibrary);
+    /* console.log(`book status is now ${this.bookReadStatus}`);
+    console.log(myLibrary); */
 };
+
+function bookRemove() {
+    this.component.remove();
+    myLibrary.splice(myLibrary.indexOf(this), 1);
+    Object.this = undefined;
+}
 
 function Book(bookName, bookAuthor="undefined", bookPages="0", bookReadStatus=false) {
     return {
@@ -52,7 +58,8 @@ function Book(bookName, bookAuthor="undefined", bookPages="0", bookReadStatus=fa
         bookAuthor,
         bookPages,
         bookReadStatus,
-        toggleRead: bookToggleRead
+        toggleRead: bookToggleRead,
+        remove: bookRemove
     };
 }
 
@@ -119,14 +126,15 @@ function addNewBook(event){
 function toggleReadStatus(event) {
     //find book parent
     const bookObject = myLibrary.filter(book => book.component.querySelector('button.book-button-read') == event.target)[0];
+    
     //toggle status
     bookObject.toggleRead();
 }
 
 function removeBook(event) {
     //find book parent
-    // const bookObject = myLibrary.filter(book => book.component.querySelector('button.book-button-read') == event.target);
-    const bookParent = event.target.parentElement.parentElement;
+    const bookObject = myLibrary.filter(book => book.component.querySelector('button.book-button-remove') == event.target)[0];
+    
     //delete book
-    bookParent.remove();
+    bookObject.remove();
 }
