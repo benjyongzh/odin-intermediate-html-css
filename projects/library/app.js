@@ -32,11 +32,7 @@ function closeSideBar(event) {
     mainBookAddButton.textContent = "Add New Book";
 };
 
-function book(bookName, bookAuthor="undefined", bookPages="0", bookReadStatus=false) {
-    return {bookName, bookAuthor, bookPages, bookReadStatus};
-}
-
-book.prototype.toggleRead = () => {
+function bookToggleRead() {
     this.bookReadStatus = !this.bookReadStatus;
     this.component.classList.toggle('book-status-read');
     const buttonRead = this.component.querySelector('button.book-button-read');
@@ -46,16 +42,26 @@ book.prototype.toggleRead = () => {
     } else {
         buttonRead.textContent = "Read";
     };
-    console.log(`book status is now $(this.bookReadStatus)`);
+    console.log(`book status is now ${this.bookReadStatus}`);
+    console.log(myLibrary);
 };
+
+function Book(bookName, bookAuthor="undefined", bookPages="0", bookReadStatus=false) {
+    return {
+        bookName,
+        bookAuthor,
+        bookPages,
+        bookReadStatus,
+        toggleRead: bookToggleRead
+    };
+}
 
 function addNewBook(event){
     //add new book
     event.preventDefault();
     const newBookData = new FormData(event.target);
     const formProps = Object.fromEntries(newBookData);
-    //console.log(formProps);
-    const newBookObject = new book(
+    const newBookObject = new Book(
         formProps.bookName,
         formProps.bookAuthor,
         formProps.bookPages,
