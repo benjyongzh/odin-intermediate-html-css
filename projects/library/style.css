@@ -138,15 +138,17 @@ body {
     justify-content: center;
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 1px 1px 1px 1px var(--color-shadow),
-                2px 2px 4px 1px var(--color-shadow),
-                4px 4px 8px 1px var(--color-shadow);
+    box-shadow: var(--button-shadow-size);
     gap: 8%;
     transition: 0.15s ease-in-out;
     background-color: var(--color-lightgrey);
     /* background-blend-mode: overlay; */
     position: relative;
     z-index: 0;
+}
+
+.book:hover {
+    box-shadow: var(--button-shadow-size-hover);
 }
 
 .book>* {
@@ -244,6 +246,14 @@ body {
     box-sizing: border-box;
 }
 
+.book>.book-button-area>button:hover {
+    background-color: var(--color-accent-hover);
+}
+
+.book>.book-button-area>button:active {
+    background-color: var(--color-accent-active);
+}
+
 .book>.book-button-area>button.book-button-remove {
     background-color: var(--color-lightgrey);
     border: 2px solid var(--color-shadow)
@@ -251,9 +261,6 @@ body {
 
 .sidebar {
     background-color: var(--color-bg);
-    /* box-shadow: -0px 0 0px 1px var(--color-shadow),
-                -0px 0 0px 1px var(--color-shadow),
-                -0px 0 0px 1px var(--color-shadow); */
     box-shadow: -1px 0 2px 1px var(--color-shadow),
                 -2px 0 4px 1px var(--color-shadow),
                 -4px 0 8px 1px var(--color-shadow);
@@ -360,13 +367,28 @@ form.form-book-add>.book-add-buttons-area {
     font-size: 16px;
     border-radius: 5px;
     border: none;
-    box-shadow: 1px 1px 1px 1px var(--color-shadow),
-                2px 4px 4px 1px var(--color-shadow)
-                /* 4px 8px 8px 1px var(--color-shadow) */;
+    box-shadow: var(--button-shadow-size);
     display: flex;
     align-items: center;
     justify-content: center;
     justify-self: flex-end;
+    transition: 0.1s ease-in-out;
+}
+
+.book-add-buttons-area>button:hover {
+    box-shadow: var(--button-shadow-size-hover);
+}
+
+.book-add-buttons-area>button[type='submit']:hover {
+    background-color: var(--color-accent-hover);
+}
+
+.book-add-buttons-area>button:active {
+    box-shadow: var(--button-shadow-size-active);
+}
+
+.book-add-buttons-area>button[type='submit']:active {
+    background-color: var(--color-accent-active);
 }
 
 .book-add-buttons-area>button.book-add-cancel {

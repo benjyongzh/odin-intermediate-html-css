@@ -1,4 +1,3 @@
-const container = document.querySelector('.container');
 const mainArea = document.querySelector('.main');
 const booksArea = mainArea.querySelector('.books');
 
@@ -10,8 +9,6 @@ const sideBar = document.querySelector('.sidebar');
 const sideBarForm = sideBar.querySelector('form');
 sideBarForm.addEventListener('submit', addNewBook);
 
-const sideBarConfirmButton = sideBarForm.querySelector('button[type="submit"]');
-/* sideBarConfirmButton.addEventListener('click', addNewBook); */
 const sideBarCancelButton = sideBarForm.querySelector('.book-add-cancel');
 sideBarCancelButton.addEventListener('click', closeSideBar);
 
@@ -36,7 +33,7 @@ function bookToggleRead() {
     this.bookReadStatus = !this.bookReadStatus;
     this.component.classList.toggle('book-status-read');
     const buttonRead = this.component.querySelector('button.book-button-read');
-    console.log(buttonRead);
+    // console.log(buttonRead);
     if (buttonRead.textContent == "Read") {
         buttonRead.textContent = "Un-read";
     } else {
