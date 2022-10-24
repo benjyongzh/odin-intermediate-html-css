@@ -1,9 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap');
+
 * {
     /* border: 1px solid black; */
     list-style: none;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Roboto', 'Times New Roman', Arial, Helvetica, sans-serif;
+
 }
 
 :root {
@@ -11,8 +15,22 @@
     --color-mediumgrey: rgb(145, 142, 136);
     --color-darkgrey: rgb(61, 60, 58);
     --color-bg: rgb(238, 233, 225);
-    --color-accent: rgb(253, 203, 110);
+    --color-accent: rgb(240, 192, 102);
+    --color-accent-hover: rgb(250, 203, 115);
+    --color-accent-active: rgb(197, 157, 82);
     --color-shadow: rgba(56, 56, 56, 0.1);
+
+    --button-shadow-size: 1px 1px 1px 1px var(--color-shadow),
+                        2px 4px 4px 1px var(--color-shadow),
+                        4px 8px 8px 1px var(--color-shadow);
+    --button-shadow-size-hover: 2px 2px 2px 1px var(--color-shadow),
+                                4px 8px 4px 1px var(--color-shadow),
+                                8px 12px 12px 1px var(--color-shadow);
+    --button-shadow-size-active: 1px 1px 1px 1px var(--color-shadow),
+                                1px 2px 2px 1px var(--color-shadow),
+                                2px 4px 4px 1px var(--color-shadow);
+    --button-shadow-size-disabled: 1px 1px 1px 1px var(--color-shadow),
+                                2px 4px 4px 1px var(--color-shadow);
 }
 
 body {
@@ -61,11 +79,14 @@ body {
 }
 
 .header-title {
-    font-size: 48px;
+    font-size: 64px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: lighter;
 }
 
 .header-text {
-    font-size: 20px;
+    font-size: 18px;
 }
 
 .header>button.button-add {
@@ -75,19 +96,30 @@ body {
     font-size: 18px;
     padding: 0.8rem 1.6rem;
     border-radius: 5px;
-    box-shadow: 1px 1px 1px 1px var(--color-shadow),
-                2px 4px 4px 1px var(--color-shadow),
-                4px 8px 8px 1px var(--color-shadow);
+    box-shadow: var(--button-shadow-size);
     background-color: var(--color-accent);
     border: 0px solid black;
     color: var(--color-darkgrey);
+    transition: 0.1s ease-in-out;
 }
 
-.header>button.button-add.adding-book {
+.header>button.button-add:hover {
+    background-color: var(--color-accent-hover);
+    box-shadow: var(--button-shadow-size-hover);
+}
+
+.header>button.button-add:active {
+    background-color: var(--color-accent-active);
+    box-shadow: var(--button-shadow-size-active);
+}
+
+
+.header>button.button-add.adding-book,
+.header>button.button-add.adding-book:hover,
+.header>button.button-add.adding-book:active {
     background-color: var(--color-lightgrey);
     color: var(--color-mediumgrey);
-    box-shadow: 1px 1px 1px 1px var(--color-shadow),
-                2px 4px 4px 1px var(--color-shadow);
+    box-shadow: var(--button-shadow-size-disabled);
 }
 
 .main>.books {
@@ -165,6 +197,10 @@ body {
     flex: 3;
     z-index: 2;
     
+}
+
+.book:hover>.book-title {
+    font-weight: bold;
 }
 
 .book>.book-button-area {
@@ -338,3 +374,4 @@ form.form-book-add>.book-add-buttons-area {
     /* border: 1px solid var(--color-shadow); */
     /* box-shadow: none; */
 }
+
